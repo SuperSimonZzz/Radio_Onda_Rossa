@@ -1,0 +1,3 @@
+Un semplice player per riprodurre Radio Onda Rossa, su dispositivi Android....
+E' riconosciuto come player multimediale, quindi supporta tutte le funzioni, standard.
+Play/Pause e titolo, that's it!

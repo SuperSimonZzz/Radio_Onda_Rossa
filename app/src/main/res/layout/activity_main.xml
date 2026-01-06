@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ADDED IMAGE VIEW HERE -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/header_blackonwhite"
+        android:contentDescription="Onda Rossa Logo"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/playPause"
+        android:text="Play"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/nowPlaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Radio Onda Rossa"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>

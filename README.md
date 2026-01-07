@@ -11,7 +11,7 @@ Un player Android semplice e leggero per ascoltare **Radio Onda Rossa**.
 Non è necessario compilare il progetto per utilizzare l'app.
 
 1.  Vai alla pagina delle [Releases](https://github.com/SuperSimonZzz/Radio_Onda_Rossa/releases).
-2.  Scarica il file `Radio_Onda_Rossa.apk`.
+2.  Scarica il file `RadioOndaRossa.apk`.
 3.  Installalo sul tuo dispositivo Android (potrebbe essere necessario abilitare l'installazione da origini sconosciute).
 
 ## Dettagli Tecnici

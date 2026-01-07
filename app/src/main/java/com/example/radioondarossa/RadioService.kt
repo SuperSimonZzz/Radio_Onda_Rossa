@@ -16,17 +16,17 @@ class RadioService : Service() {
     private lateinit var player: ExoPlayer
     private lateinit var mediaSession: MediaSessionCompat
     private val metadataFetcher = MetadataFetcher()
-
     private val streamUrl = "https://blimp.streampunk.cc/_stream/ondarossa.ogg"
     private val CHANNEL_ID = "radio_channel"
     private val NOTIFICATION_ID = 1
 
-    private val noisyReceiver = object : android.content.BroadcastReceiver() {        override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action == android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY) {
-            // Headset disconnected -> Stop playback explicitly
-            stopPlayback()
+    private val noisyReceiver = object : android.content.BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.action == android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY) {
+                // Headset disconnected -> Stop playback explicitly
+                stopPlayback()
+            }
         }
-    }
     }
 
     override fun onCreate() {
@@ -105,7 +105,7 @@ class RadioService : Service() {
 
         try {
             registerReceiver(noisyReceiver, android.content.IntentFilter(android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY))
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             // Already registered or failed, ignore
         }
 
@@ -155,7 +155,7 @@ class RadioService : Service() {
 
         updateNotification(title, subtitle)
         sendPlaybackState("STOPPED")
-        stopForeground(false)
+        stopForeground(STOP_FOREGROUND_DETACH)
     }
 
     // -----------------------------
@@ -210,7 +210,7 @@ class RadioService : Service() {
         if (isPlaying) {
             startForeground(NOTIFICATION_ID, notification)
         } else {
-            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             manager.notify(NOTIFICATION_ID, notification)
         }
     }

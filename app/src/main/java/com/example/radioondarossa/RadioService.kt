@@ -155,7 +155,8 @@ class RadioService : Service() {
 
         updateNotification(title, subtitle)
         sendPlaybackState("STOPPED")
-        stopForeground(STOP_FOREGROUND_DETACH)
+        @Suppress("DEPRECATION")
+        stopForeground(false)
     }
 
     // -----------------------------
